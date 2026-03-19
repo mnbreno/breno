@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "twenty-crm": {
+      "command": "node",
+      "args": ["./twenty-crm-mcp-server/index.js"],
+      "env": {
+        "TWENTY_API_KEY": "paste-api-key-from-twenty-settings",
+        "TWENTY_BASE_URL": "https://your-twenty-host.example.com"
+      }
+    }
+  }
+}

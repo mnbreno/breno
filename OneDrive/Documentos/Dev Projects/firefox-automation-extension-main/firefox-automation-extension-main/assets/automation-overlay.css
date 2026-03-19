@@ -1,0 +1,71 @@
+.firefox-automation-highlight {
+  outline: 3px solid #f97316 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.35) !important;
+  transition: box-shadow 120ms ease-in-out, outline-color 120ms ease-in-out;
+}
+
+.firefox-automation-adf-panel {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid #f97316;
+  background: #111827;
+  color: #f9fafb;
+  font-family: Arial, sans-serif;
+  line-height: 1.4;
+}
+
+.firefox-automation-header-panel {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-left: 12px;
+  padding: 8px 12px;
+  max-width: 100%;
+  border-radius: 999px;
+  border: 2px solid #f97316;
+  background: #111827;
+  color: #f9fafb;
+  font-family: Arial, sans-serif;
+  vertical-align: middle;
+}
+
+.firefox-automation-header-meta {
+  color: #e5e7eb;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.firefox-automation-adf-preview,
+.firefox-automation-adf-status {
+  margin: 0;
+  color: #e5e7eb;
+}
+
+.firefox-automation-header-panel .firefox-automation-adf-status {
+  font-size: 12px;
+}
+
+#InsertionPointForInteractions .firefox-automation-header-panel {
+  float: right;
+}
+
+.firefox-automation-adf-button {
+  width: fit-content;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2563eb;
+  color: #eff6ff;
+  font: inherit;
+}
+
+.firefox-automation-adf-button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}

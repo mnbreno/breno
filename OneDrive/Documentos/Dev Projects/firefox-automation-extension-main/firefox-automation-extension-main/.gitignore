@@ -1,0 +1,13 @@
+node_modules/
+dist/
+web-ext-artifacts/
+coverage/
+.eslintcache
+*.xpi
+*.zip
+
+# Local Cursor MCP config (may contain API keys) — copy from mcp.json.example
+.cursor/mcp.json
+
+# Local exports / samples (may contain PII)
+inboundLead.csv

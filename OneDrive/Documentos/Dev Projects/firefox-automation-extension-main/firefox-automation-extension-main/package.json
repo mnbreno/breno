@@ -1,0 +1,52 @@
+{
+  "name": "firefox-automation-extension",
+  "version": "0.2.1",
+  "description": "Firefox WebExtension scaffold for automation workflows.",
+  "private": true,
+  "scripts": {
+    "clean": "node -e \"const fs=require('fs'); for (const dir of ['dist','web-ext-artifacts','coverage']) fs.rmSync(dir,{recursive:true,force:true});\"",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "watch": "webpack --mode development --watch",
+    "dev": "concurrently -k -n build,firefox \"npm:watch\" \"npm:run:firefox\"",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "jest --runInBand",
+    "run:firefox": "wait-on dist/manifest.json && node ./scripts/run-firefox.mjs",
+    "package": "npm run build && web-ext build -s dist -a web-ext-artifacts --overwrite-dest",
+    "sign": "npm run build && node ./scripts/sign-extension.mjs",
+    "validate:amo": "npm run build && npm run lint && npm run typecheck && npm run test && web-ext lint -s dist && node ./scripts/validate-extension.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@microsoft/eslint-plugin-sdl": "^1.1.0",
+    "@types/firefox-webext-browser": "^143.0.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.0",
+    "@typescript-eslint/parser": "^8.57.0",
+    "concurrently": "^9.2.1",
+    "copy-webpack-plugin": "^14.0.0",
+    "eslint": "^9.39.4",
+    "eslint-plugin-jsdoc": "^62.7.1",
+    "eslint-plugin-mozilla": "^4.4.0",
+    "eslint-plugin-no-unsanitized": "^4.1.5",
+    "eslint-plugin-promise": "^7.2.1",
+    "globals": "^17.4.0",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "ts-jest": "^29.4.6",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "wait-on": "^9.0.4",
+    "web-ext": "^9.4.0",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^6.0.1"
+  }
+}

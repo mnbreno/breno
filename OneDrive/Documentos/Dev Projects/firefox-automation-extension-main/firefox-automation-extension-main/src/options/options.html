@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Firefox Automation Options</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: #0f172a;
+        color: #f8fafc;
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+
+      form {
+        display: grid;
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      label {
+        display: grid;
+        gap: 6px;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="password"],
+      textarea {
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #334155;
+        background: #020617;
+        color: inherit;
+      }
+
+      .checkbox {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      button {
+        width: fit-content;
+        padding: 10px 14px;
+        border: 0;
+        border-radius: 8px;
+        cursor: pointer;
+        background: #2563eb;
+        color: white;
+      }
+
+      pre {
+        padding: 12px;
+        border-radius: 8px;
+        background: #020617;
+        border: 1px solid #334155;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Firefox Automation Options</h1>
+      <p>Control the default selector and how the content script behaves on target pages.</p>
+
+      <form id="options-form">
+        <label>
+          <span>Default selector</span>
+          <input id="defaultSelector" type="text" placeholder="body" />
+        </label>
+
+        <label>
+          <span>Highlight duration (ms)</span>
+          <input id="highlightDurationMs" type="number" min="250" max="10000" step="250" />
+        </label>
+
+        <label class="checkbox">
+          <input id="autoScrollIntoView" type="checkbox" />
+          <span>Scroll elements into view before running actions</span>
+        </label>
+
+        <label class="checkbox">
+          <input id="enableLeadSound" type="checkbox" />
+          <span>Play a warning sound when a visible new lead arrives</span>
+        </label>
+
+        <label class="checkbox">
+          <input id="enableLeadNotifications" type="checkbox" />
+          <span>Show browser notifications for new lead alerts</span>
+        </label>
+
+        <label>
+          <span>Twenty CRM base URL</span>
+          <input id="twentyBaseUrl" type="text" placeholder="https://api.twenty.com" />
+        </label>
+
+        <label>
+          <span>Twenty API key</span>
+          <input id="twentyApiKey" type="password" placeholder="Twenty API key (token only, or Bearer token — not both)" />
+        </label>
+
+        <label>
+          <span>Twenty lead endpoint path</span>
+          <input id="twentyLeadEndpointPath" type="text" placeholder="rest/leads" />
+        </label>
+
+        <label class="checkbox">
+          <input id="twentyUploadAdfAttachments" type="checkbox" />
+          <span>Upload each ADF as a separate .txt attachment (GraphQL upload + createAttachment)</span>
+        </label>
+
+        <label>
+          <span>Twenty GraphQL path (CRUD + createAttachment)</span>
+          <input id="twentyGraphqlPath" type="text" placeholder="graphql" />
+        </label>
+
+        <label>
+          <span>GraphQL path for file multipart uploads (optional — try metadata if uploads fail)</span>
+          <input id="twentyGraphqlUploadPath" type="text" placeholder="empty = try /metadata then core GraphQL; or set metadata only" />
+        </label>
+
+        <label>
+          <span>Attachment file field metadata UUID (for uploadFilesFieldFile — see integration guide)</span>
+          <input id="twentyAttachmentFileFieldMetadataId" type="text" placeholder="empty = legacy uploadFile only" />
+        </label>
+
+        <label>
+          <span>Attachment parent field (optional, e.g. targetInboundLeadId)</span>
+          <input id="twentyAttachmentParentField" type="text" placeholder="empty = infer from lead path" />
+        </label>
+
+        <label>
+          <span>uploadFile FileFolder enum (legacy only; optional)</span>
+          <input id="twentyUploadFileFolder" type="text" placeholder="leave empty if upload only needs file" />
+        </label>
+
+        <label>
+          <span>Twenty lead field map (JSON)</span>
+          <textarea id="twentyLeadFieldMap" rows="12"></textarea>
+        </label>
+
+        <button type="submit">Save settings</button>
+        <button id="testTwentyConnection" type="button">Test Twenty connection</button>
+      </form>
+
+      <pre id="status">Loading settings…</pre>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

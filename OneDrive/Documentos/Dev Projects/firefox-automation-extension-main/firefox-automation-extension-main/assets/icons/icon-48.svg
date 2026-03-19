@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Firefox automation icon">
+  <rect width="48" height="48" rx="10" fill="#0f172a" />
+  <path d="M14 16h20v4H14zm0 7h20v4H14zm0 7h12v4H14z" fill="#f8fafc" />
+  <circle cx="33" cy="31" r="7" fill="#2563eb" />
+  <path d="M33 27v8M29 31h8" stroke="#eff6ff" stroke-width="2" stroke-linecap="round" />
+</svg>

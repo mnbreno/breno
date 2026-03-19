@@ -1,0 +1,104 @@
+:root {
+  color-scheme: light dark;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 360px;
+  background: #111827;
+  color: #f9fafb;
+}
+
+.popup {
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.popup__header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.popup__header h1,
+.popup__header p {
+  margin: 0;
+}
+
+.popup__header p {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.popup__icon {
+  width: 32px;
+  height: 32px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.field input,
+.field textarea,
+.actions button {
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 10px;
+  font: inherit;
+}
+
+.field input,
+.field textarea {
+  background: #0f172a;
+  color: inherit;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.actions button {
+  cursor: pointer;
+  background: #1d4ed8;
+  color: #eff6ff;
+}
+
+.actions button:hover {
+  background: #2563eb;
+}
+
+.output {
+  display: grid;
+  gap: 8px;
+}
+
+.output__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.output a {
+  color: #93c5fd;
+}
+
+#result {
+  margin: 0;
+  min-height: 132px;
+  max-height: 240px;
+  overflow: auto;
+  padding: 10px;
+  border-radius: 8px;
+  background: #020617;
+  border: 1px solid #334155;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

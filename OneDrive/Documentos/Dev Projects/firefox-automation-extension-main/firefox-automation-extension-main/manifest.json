@@ -1,0 +1,70 @@
+{
+  "manifest_version": 3,
+  "name": "Firefox Automation Extension",
+  "version": "0.1.0",
+  "description": "Automation-ready Firefox extension scaffold with popup, background orchestration, and content scripts.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "firefox-automation-extension@example.com",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  },
+  "icons": {
+    "48": "assets/icons/icon-48.svg",
+    "96": "assets/icons/icon-96.svg"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "action": {
+    "default_title": "Firefox Automation",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "activeTab",
+    "notifications",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/automation-overlay.css",
+        "assets/icons/icon-48.svg",
+        "assets/icons/icon-96.svg",
+        "assets/warning-tone.wav"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

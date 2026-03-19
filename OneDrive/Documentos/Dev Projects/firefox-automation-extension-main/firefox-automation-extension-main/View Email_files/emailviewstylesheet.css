@@ -1,0 +1,114 @@
+﻿pre {
+    white-space: pre-wrap; /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+#toolbar {
+    margin: 0px 0px 0px 0px;
+    display: block;
+}
+
+#InsertionPointForInteractions {
+    padding: 10px;
+}
+
+#InsertionPointForNotifications {
+    padding: 10px;
+}
+
+#Comments {
+    height: 50px;
+    width: 300px;
+}
+
+#InsertionPointForBody, #pnlChallenge {
+    padding: 10px;
+    width: 97%;
+    overflow: auto;
+}
+
+#InsertionPointForBody table {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+#pnlChallenge div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#OptionalEmailHeaderInformation {
+    height: 65px;
+}
+
+#OptionalEmailHeaderInformation td {
+    font-size: 8pt;
+    font-style: normal;
+    font: tahoma;
+}
+
+#OptionalComments td {
+    padding-top: 7px;
+}
+
+#OptionalComments td span {
+    font-size: 8pt;
+    font-style: normal;
+    font: tahoma;
+}
+
+#OptionalComments td textarea {
+    margin-top: 7px;
+}
+
+/*ELSMOD-1775 - ViewEmailMessage.aspx*/
+td {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+#OptionalComments td textarea {
+    margin-top: 7px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    background: #FFF;
+    min-height: 103px;
+}
+
+.buttons {
+    color: #196FE1;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.25px;
+    padding: 9px 12px;
+}
+
+.MailLabel {
+    color: rgba(0, 0, 0, 0.70);
+    font-family: Roboto;
+    font-size: 11px !important;
+    font-style: normal !important;
+    font-weight: 400;
+    line-height: 12px;
+    display: block;
+    padding: 10px 10px 0;
+}
+
+.MailInfo {
+    color: #000;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 0 10px 10px;
+}

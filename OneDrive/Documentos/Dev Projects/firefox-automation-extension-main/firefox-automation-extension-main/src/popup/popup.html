@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Firefox Automation</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="popup__header">
+        <img class="popup__icon" src="assets/icons/icon-48.svg" alt="" />
+        <div>
+          <h1>Firefox Automation</h1>
+          <p>Run quick actions in the active tab.</p>
+        </div>
+      </header>
+
+      <label class="field">
+        <span>CSS selector</span>
+        <input id="selector" type="text" placeholder="body" />
+      </label>
+
+      <label class="field">
+        <span>Value</span>
+        <textarea id="value" rows="3" placeholder="Optional text for set value"></textarea>
+      </label>
+
+      <section class="actions">
+        <button data-action="getPageInfo" type="button">Page info</button>
+        <button data-action="highlightSelector" type="button">Highlight</button>
+        <button data-action="clickSelector" type="button">Click</button>
+        <button data-action="extractText" type="button">Extract text</button>
+        <button data-action="setValue" type="button">Set value</button>
+      </section>
+
+      <section class="output">
+        <div class="output__toolbar">
+          <strong>Status</strong>
+          <a href="options.html" target="_blank" rel="noreferrer">Options</a>
+        </div>
+        <pre id="result">Waiting for action…</pre>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
